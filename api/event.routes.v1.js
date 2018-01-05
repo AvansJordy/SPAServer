@@ -27,7 +27,7 @@ routes.get('/events/:id', function(req, res) {
 
     events.findOne({_id: id})
         .populate({
-            path: 'guests'
+            path: 'users'
         })
         .then((events) => {
             res.status(200).send(events
